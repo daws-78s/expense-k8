@@ -34,6 +34,13 @@ spec:
       containers:
       - name: backend
         image: joindevops/backend:v1.0
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "150m"
+            memory: "256Mi"
         envFrom:
         - configMapRef:
             name: backend
