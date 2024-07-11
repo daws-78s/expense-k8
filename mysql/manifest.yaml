@@ -26,6 +26,16 @@ spec:
       containers:
       - name: mysql
         image: joindevops/mysql:v1.0
+        readinessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 10
+          periodSeconds: 5
 
 ---
 apiVersion: v1
